@@ -9,8 +9,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var fieldText: String = "1337"
+    
     var body: some View {
-        Text("Hello, World!")
+        VStack {
+        Text("Input: \(fieldText)")
+            .foregroundColor(.secondary)
+            DoneButtonFieldView(text: $fieldText, keyboardType: .numberPad)
+                .frame(height: 44.0)
+                .padding()
+        }
     }
 }
 
